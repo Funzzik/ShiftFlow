@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Главная страница - Shift Flow</title>
+  <link rel="stylesheet" href="./Css/style.css" />
+  <link rel="icon" href="./images/car-icon.svg" type="image/x-icon" />
+</head>
+<body>
+  <!-- декоративные свечения -->
+  <div class="glow-effect-right-bottom"></div>
+  <div class="glow-effect-right-bottom-1"></div>
+  <div class="glow-effect-left-bottom"></div>
+  <div class="glow-effect-left-bottom-1"></div>
+
+  <!-- Шапка (как в general.html) -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav-left desktop-nav">
+        <a href="./index.html">Главная</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <div class="logo">
+        <a href="./index.html"><img src="./images/logotip.png" alt="Shift Flow" /></a>
+      </div>
+      <nav class="nav-right desktop-nav">
+        <a href="./general.html#carpark">Автопарк</a>
+        <a href="./general.html#services">Услуги</a>   <!-- исправлено: servicesl → services -->
+      </nav>
+      <button class="burger-btn" id="burgerBtn">Меню</button>
+    </div>
+  </header>
+
+  <!-- Мобильное меню (такое же, как в general) -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="./index.html">Главная</a>
+    <a href="#contact">Контакты</a>
+    <a href="./general.html#carpark">Автопарк</a>
+    <a href="./general.html#services">Услуги</a>
+  </div>
+
+  <!-- Баннер -->
+  <section class="banner">
+    <div class="banner-container">
+      <div class="banner-content">
+        <h1 class="banner-title">
+          Твой ритм. Твои правила.<br />
+          Твой <span class="highlight">Shift Flow</span>
+        </h1>
+        <div class="banner-buttons">
+          <a href="#" class="btn btn-primary btn-open-modal">Оставить заявку</a>
+          <a href="./general.html#carpark" class="btn btn-secondary">Наш автопарк</a>
+        </div>
+        <div class="counters">
+          <div class="counter-item">
+            <div class="counter-label">Опыт работы</div>
+            <div class="counter-value">9 лет</div>
+          </div>
+          <div class="counter-item">
+            <div class="counter-label">Выпускников<br />обучено</div>
+            <div class="counter-value">>2000</div>
+          </div>
+          <div class="counter-item">
+            <div class="counter-label">Сдают с 1-го<br />раза</div>
+            <div class="counter-value">>80%</div>
+          </div>
+        </div>
+      </div>
+      <div class="banner-image-wrapper">
+        <img src="./images/Car-banner.png" alt="Белая Audi A5 Drift Flow" class="banner-car" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Преимущества -->
+  <section class="advantages">
+    <div class="container advantages-container">
+      <h2 class="advantages-main-title">Преимущества</h2>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <h3 class="advantage-title">Здесь нет «вечно<br />занятых» мастеров</h3>
+          <p class="advantage-text">Мы не экономим на бензине и нервах. Максимум 2 ученика на машину в потоке. Инструктор — ваш штурман, а не надзиратель. Если лампочка Check Engine горит у вас в голове — мы сначала чиним голову, потом коробку.</p>
+        </div>
+        <div class="advantage-card">
+          <h3 class="advantage-title">Ручка КПП — не<br />враг, а джойстик</h3>
+          <p class="advantage-text">Вместо бездумных квадратных кругов по автодрому — реальные городские ритмы. Вы не просто учитесь переключать передачи, вы чувствуете, когда это делать без звука мотора. Вождение перестанет быть стрессом и станет похоже на музыку.</p>
+        </div>
+        <div class="advantage-card">
+          <h3 class="advantage-title">Переключаешься<br />без паузы</h3>
+          <p class="advantage-text">Наши инструкторы работают по методике непрерывного потока: вы учитесь думать на 2-3 шага вперед, плавно ведя машину без рывков и ненужных остановок. В итоге — экономия топлива и нервов.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Стоимость обучения -->
+  <section class="pricing-section">
+    <h2 class="main-title">Стоимость обучения</h2>
+    <div class="pricing-wrapper">
+      <div class="pricing-row top-row">
+        <div class="card">
+          <div class="card-content">
+            <div class="header-row">
+              <span class="category-letter">A</span>
+              <div class="price-block">
+                <div class="current-price">14 900 ₽</div>
+                <div class="old-price">18 000 ₽</div>
+              </div>
+            </div>
+            <ul class="features">
+              <li>Цена с учетом трат бензина</li>
+              <li>Срок обучения 1 месяц</li>
+              <li>18 часов вождения</li>
+              <li class="highlight">При наличии категории B</li>
+            </ul>
+          </div>
+          <button class="btn-card btn-open-modal">Записаться на обучение</button>
+        </div>
+        <div class="card">
+          <div class="badge">Доступна рассрочка</div>
+          <div class="card-content">
+            <div class="header-row">
+              <span class="category-letter">B</span>
+              <div class="price-block">
+                <div class="current-price">37 900 ₽</div>
+                <div class="old-price">41 000 ₽</div>
+              </div>
+            </div>
+            <ul class="features">
+              <li>Цена с учетом трат бензина</li>
+              <li>Срок обучения 2,5 месяца</li>
+              <li>68 (МКПП) и 64 (АКПП) часов вождения</li>
+            </ul>
+          </div>
+          <button class="btn-card btn-open-modal">Записаться на обучение</button>
+        </div>
+        <div class="card">
+          <div class="badge">Доступна рассрочка</div>
+          <div class="card-content">
+            <div class="header-row">
+              <span class="category-letter">C</span>
+              <div class="price-block">
+                <div class="current-price">34 900 ₽</div>
+                <div class="old-price">38 000 ₽</div>
+              </div>
+            </div>
+            <ul class="features">
+              <li>Цена с учетом трат бензина</li>
+              <li>Срок обучения 1,5 месяца</li>
+              <li>38 часов вождения</li>
+              <li class="highlight">При наличии категории B</li>
+            </ul>
+          </div>
+          <button class="btn-card btn-open-modal">Записаться на обучение</button>
+        </div>
+      </div>
+      <div class="pricing-row bottom-row">
+        <div class="card wide-card">
+          <div class="card-content">
+            <div class="header-row">
+              <div class="retraining-title">
+                <span class="retraining-label">Переобучение</span>
+                <div class="retraining-letters">
+                  <span class="category-letter">B</span>
+                  <span class="retraining-mid">на</span>
+                  <span class="category-letter">D</span>
+                </div>
+              </div>
+              <div class="price-block">
+                <div class="current-price">41 900 ₽</div>
+                <div class="old-price">47 000 ₽</div>
+              </div>
+            </div>
+            <ul class="features">
+              <li>Цена с учетом трат бензина</li>
+              <li>Срок обучения 2.5 месяца</li>
+              <li>88 часов вождения</li>
+              <li class="highlight">При наличии категории B</li>
+            </ul>
+          </div>
+          <button class="btn-card btn-open-modal">Записаться на обучение</button>
+        </div>
+        <div class="card wide-card">
+          <div class="card-content">
+            <div class="header-row">
+              <div class="retraining-title">
+                <span class="retraining-label">Переобучение</span>
+                <div class="retraining-letters">
+                  <span class="category-letter">C</span>
+                  <span class="retraining-mid">на</span>
+                  <span class="category-letter">D</span>
+                </div>
+              </div>
+              <div class="price-block">
+                <div class="current-price">33 900 ₽</div>
+                <div class="old-price">36 000 ₽</div>
+              </div>
+            </div>
+            <ul class="features">
+              <li>Цена с учетом трат бензина</li>
+              <li>Срок обучения 1.5 месяца</li>
+              <li>52 часов вождения</li>
+              <li class="highlight">При наличии категории B</li>
+            </ul>
+          </div>
+          <button class="btn-card btn-open-modal">Записаться на обучение</button>
+        </div>
+      </div>
+      <p class="pricing-footnote">Мы получаем очень много заявок, поэтому точное попадание в желаемую группу зависит от текущей загрузки.<br />Наш менеджер свяжется с вами и предложит ближайшие доступные слоты — возможно, даже раньше, чем вы планировали.</p>
+    </div>
+  </section>
+
+  <!-- Блок безупречного опыта -->
+  <section class="stats-section">
+    <div class="container stats-container">
+      <h2 class="stats-main-title">Безупречный опыт<br />автошколы <span class="highlight">SHIFT FLOW</span></h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number" data-text="2087">2087</div>
+          <p class="stat-description">вышли в поток на дорогах Вологды за последний год. <span class="green-text">Дальше — ваша очередь.</span></p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-text="89%">89%</div>
+          <p class="stat-description">Столько наших учеников проходят теорию <span class="green-text">с первой попытки</span> Остальные 11% — просто хотели пересдать ради азарта</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-text="78%">78%</div>
+          <p class="stat-description"><span class="green-text">Не второй, не третий — первый</span> Эти выпускники Shift Flow закрывают практический экзамен без пересдач</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-text="300+">300+</div>
+          <p class="stat-description"><span class="green-text">4.7 на «Яндекс.Картах» и «2ГИС»</span> И это не магия! Просто каждый ученик остается в нашем потоке</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок инструкторов -->
+  <section class="instructors-section">
+    <div class="container instructors-container">
+      <div class="instructors-header">
+        <h2 class="main-title">Наши лучшие инструкторы:</h2>
+        <p class="instructors-subtitle">Лучшая похвала от учеников — их права и уверенность на дороге.</p>
+      </div>
+      <div class="instructors-grid" id="instructorsGrid">
+        <div class="instructor-card">
+          <div class="instructor-image-wrapper">
+            <img src="./images/Kovalev-instructor.png" alt="Ковалёв Алексей Сергеевич">
+          </div>
+          <div class="instructor-info">
+            <h3 class="instructor-name">Ковалёв Алексей Сергеевич</h3>
+            <p class="instructor-category">Инструктор категории «В» (механика / автомат)</p>
+            <p class="instructor-desc">Алексей не повышает голос. Даже если вы в третий раз глохнете на эстакаде. Его метод — спокойные объяснения и 100% терпения. Он не ждёт, что вы поймёте всё с первого раза.</p>
+            <p class="instructor-feedback-title">Ученики говорят:</p>
+            <p class="instructor-quote">«С ним я перестал бояться машины. Он не кричит — он объясняет. Это работает».</p>
+            <div class="instructor-stats">
+              <p><span class="green-text">Стаж:</span> 8 лет за рулем, 4 года в инструкторстве.</p>
+              <p><span class="green-text">Хвалили за:</span> умение объяснить сцепление на пальцах и довести до автоматизма.</p>
+            </div>
+          </div>
+        </div>
+        <div class="instructor-card">
+          <div class="instructor-image-wrapper">
+            <img src="./images/Morozova-instructor.png" alt="Морозова Екатерина Андреевна">
+          </div>
+          <div class="instructor-info">
+            <h3 class="instructor-name">Морозова Екатерина Андреевна</h3>
+            <p class="instructor-category">Инструктор категории «В» (механика / автомат)</p>
+            <p class="instructor-desc">Екатерина не учит «женской езде» — она учит уверенной. Без стереотипов, без скидок на пол, но с полным пониманием страхов новичка.</p>
+            <p class="instructor-feedback-title">Её ученики признаются:</p>
+            <p class="instructor-quote">«С Екатериной я перестал бояться, что меня осудят за ошибку. Хоть заглохну, хоть запаркуюсь криво — она просто объяснит».</p>
+            <div class="instructor-stats">
+              <p><span class="green-text">Стаж:</span> 6 лет за рулем, 3 года в инструкторстве.</p>
+              <p><span class="green-text">Хвалили за:</span> мягкую подачу, внимание к деталям и умение объяснить сложное простыми словами.</p>
+            </div>
+          </div>
+        </div>
+        <div class="instructor-card" id="thirdInstructorCard">
+          <div class="instructor-image-wrapper">
+            <img src="./images/Orlov-instructor.png" alt="Орлов Михаил Владимирович">
+          </div>
+          <div class="instructor-info">
+            <h3 class="instructor-name">Орлов Михаил Владимирович</h3>
+            <p class="instructor-category">Инструктор категорий B, A, D</p>
+            <p class="instructor-desc">Михаил — редкий зверь в автошкольном мире. Он одинаково спокойно научит вас трогаться на «механике», держать равновесие на мотоцикле и чувствовать габариты автобуса.</p>
+            <p class="instructor-feedback-title">Его ученики говорят:</p>
+            <p class="instructor-quote">«С Мишей я перестал бояться любой техники. Хоть легковушка, хоть фура — он всё объяснит».</p>
+            <div class="instructor-stats">
+              <p><span class="green-text">Стаж:</span> 14 лет (из них 7 — за рулём автобуса), 6 лет в инструкторстве.</p>
+              <p><span class="green-text">Хвалили за:</span> универсальность, спокойствие и умение объяснить разницу в управлении разной техникой на пальцах.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center;" id="loadMoreWrapper">
+        <button class="btn-load-more" id="loadMoreBtn">Загрузить еще</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Модальное окно -->
+  <div class="modal-overlay" id="enrollModal">
+    <div class="modal-box" id="modalFormBox">
+      <button class="modal-close-btn" id="closeFormBtn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18M6 6L18 18" stroke="var(--amber-color)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <h3 class="modal-title">Записаться на обучение</h3>
+      <form id="enrollmentForm" novalidate>
+        <input type="text" class="modal-input" placeholder="*Ваше ФИО" required>
+        <input type="tel" id="phoneInput" class="modal-input" placeholder="*Ваш номер телефона" required>
+        <div class="select-wrapper">
+          <select class="modal-input custom-select" required>
+            <option value="" disabled selected hidden>*Категория обучения</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="D">D</option>
+            <option value="B на C">B на C</option>
+            <option value="C на D">C на D</option>
+          </select>
+        </div>
+        <input type="text" class="modal-input" placeholder="*Когда готовы приступить к обучению?" required>
+        <p class="modal-note">То что помечено * обязательно к заполнению</p>
+        <div class="modal-footer">
+          <label class="modal-checkbox-label">
+            <input type="checkbox" id="policyCheckbox" required>
+            <span class="custom-checkbox" id="customCheckmark"></span>
+            <span class="checkbox-text">Я согласен(на) на обработку<br>персональных данных</span>
+          </label>
+          <button type="submit" class="modal-submit-btn">Отправить</button>
+        </div>
+      </form>
+    </div>
+    <div class="modal-box" id="modalSuccessBox" style="display: none;">
+      <h3 class="modal-title">Благодарим за запись!</h3>
+      <p class="modal-success-text">Наш менеджер свяжется с вами<br>в течение 30 минут.<br>Если через это время звонок не<br>поступит напишите нам в<br>телеграм - <a href="https://t.me/shiftflow" target="_blank" class="modal-link">t.me/shiftflow</a> или<br>позвоните на номер<br><a href="tel:+88005553535" class="modal-link">+8(800)555-35-35</a></p>
+      <div class="modal-success-footer">
+        <button class="modal-submit-btn" id="closeSuccessBtn">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Подвал -->
+  <footer class="footer-section">
+    <div class="glow-effect-footer"></div>
+    <div class="footer-socials">
+      <div class="container socials-container">
+        <a href="#" class="social-link">
+          <img src="./images/telegram-logo.svg" alt="Телеграм" class="social-icon">
+          <span>Телеграм</span>
+        </a>
+        <a href="#" class="social-link">
+          <img src="./images/vk-logo.svg" alt="ВКонтакте" class="social-icon">
+          <span>ВКонтакте</span>
+        </a>
+        <a href="#" class="social-link">
+          <img src="./images/ok-logo.svg" alt="Одноклассники" class="social-icon">
+          <span>Одноклассники</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="container footer-container">
+        <div class="footer-contacts" id="contact">
+          <h3 class="footer-title">Свяжитесь с нами</h3>
+          <div class="contact-info">
+            <p>Адрес: Вологда, ул. Козленская дом 4 (Остановка «Центр»)</p>
+            <p>Телефон для консультации: +7 (800) 555-35-35</p>
+            <p>E-mail: ShiftFlow@mail.ru</p>
+          </div>
+          <a href="https://www.whatsapp.com/" class="footer-link-green">Написать в WhatsApp</a>
+          <div class="schedule-info">
+            <p>Режим работы:</p>
+            <p>Пн — Пт 10:00 — 19:00.</p>
+            <p>Сб 10:00 — 17:00.</p>
+            <p>Вс — Выходной.</p>
+            <p>Без обеденного перерыва</p>
+          </div>
+          <a href="#" class="footer-link-green">Документы и лицензии</a>
+        </div>
+        <div class="footer-map-section">
+          <h3 class="footer-title map-title">Мы на картах:</h3>
+          <div class="map-wrapper">
+            <iframe 
+              src="https://yandex.ru/map-widget/v1/?ll=39.884501%2C59.219808&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzE0NzM5MRJK0KDQvtGB0YHQuNGPLCDQktC-0LvQvtCz0LTQsCwg0JrQvtC30LvQtdC90YHQutCw0Y8g0YPQu9C40YbQsCwgNNC60JIiCg2cajpCFVw3X0I%2C&z=17" 
+              width="100%" 
+              height="100%" 
+              frameborder="0" 
+              allowfullscreen="true" 
+              style="position:relative;">
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom-container">
+        <p class="footer-copyright">
+          © 2024–2026, Shift Flow. Все права защищены. Информация на сайте не является публичной офертой.<br>
+          Уточняйте актуальные цены и условия у менеджеров.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // ========== БУРГЕР-МЕНЮ ==========
+      const burgerBtn = document.getElementById('burgerBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      const body = document.body;
+      if (burgerBtn && mobileNav) {
+        burgerBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          mobileNav.classList.toggle('open');
+          burgerBtn.classList.toggle('active');
+          body.classList.toggle('menu-open');
+          burgerBtn.textContent = mobileNav.classList.contains('open') ? '✕' : 'Меню';
+        });
+        const navLinks = mobileNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileNav.classList.remove('open');
+            burgerBtn.classList.remove('active');
+            body.classList.remove('menu-open');
+            burgerBtn.textContent = 'Меню';
+          });
+        });
+        document.addEventListener('click', (e) => {
+          if (mobileNav.classList.contains('open') && 
+              !mobileNav.contains(e.target) && 
+              !burgerBtn.contains(e.target)) {
+            mobileNav.classList.remove('open');
+            burgerBtn.classList.remove('active');
+            body.classList.remove('menu-open');
+            burgerBtn.textContent = 'Меню';
+          }
+        });
+      }
+
+      // ========== МОДАЛЬНОЕ ОКНО ==========
+      const modalOverlay = document.getElementById('enrollModal');
+      const modalFormBox = document.getElementById('modalFormBox');
+      const modalSuccessBox = document.getElementById('modalSuccessBox');
+      const form = document.getElementById('enrollmentForm');
+      const openButtons = document.querySelectorAll('.btn-open-modal');
+      const closeFormBtn = document.getElementById('closeFormBtn');
+      const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+      const phoneInput = document.getElementById('phoneInput');
+      const policyCheckbox = document.getElementById('policyCheckbox');
+      const customCheckmark = document.getElementById('customCheckmark');
+
+      if (phoneInput) {
+        phoneInput.addEventListener('input', function (e) {
+          let val = e.target.value.replace(/\D/g, '');
+          if (val === '') {
+            e.target.value = '';
+            return;
+          }
+          if (val[0] === '7' || val[0] === '8') val = '7' + val.substring(1);
+          else val = '7' + val;
+          e.target.value = '+' + val.substring(0, 11);
+        });
+        phoneInput.addEventListener('focus', function (e) {
+          if (e.target.value === '') e.target.value = '+7';
+        });
+      }
+
+      if (policyCheckbox && customCheckmark) {
+        policyCheckbox.addEventListener('change', () => {
+          if (policyCheckbox.checked) customCheckmark.classList.remove('error-checkbox');
+        });
+      }
+
+      openButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          modalOverlay.classList.add('active');
+          modalFormBox.style.display = 'block';
+          modalSuccessBox.style.display = 'none';
+        });
+      });
+
+      if (closeFormBtn) closeFormBtn.addEventListener('click', () => modalOverlay.classList.remove('active'));
+      if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', () => modalOverlay.classList.remove('active'));
+      if (modalOverlay) {
+        modalOverlay.addEventListener('click', (e) => {
+          if (e.target === modalOverlay) modalOverlay.classList.remove('active');
+        });
+      }
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          let isValid = true;
+          if (policyCheckbox && !policyCheckbox.checked) {
+            if (customCheckmark) customCheckmark.classList.add('error-checkbox');
+            isValid = false;
+          }
+          if (phoneInput && phoneInput.value.length < 12) {
+            phoneInput.style.borderColor = 'red';
+            isValid = false;
+          } else if (phoneInput) {
+            phoneInput.style.borderColor = '';
+          }
+          if (isValid) {
+            modalFormBox.style.display = 'none';
+            modalSuccessBox.style.display = 'block';
+            form.reset();
+            if (customCheckmark) customCheckmark.classList.remove('error-checkbox');
+            if (phoneInput) phoneInput.style.borderColor = '';
+          }
+        });
+      }
+
+      // ========== ЛОГИКА ТРЕТЬЕГО ИНСТРУКТОРА ==========
+      const thirdCard = document.getElementById('thirdInstructorCard');
+      const loadMoreBtn = document.getElementById('loadMoreBtn');
+      const loadMoreWrapper = document.getElementById('loadMoreWrapper');
+
+      function updateInstructorVisibility() {
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+          if (thirdCard && !thirdCard.classList.contains('hidden-on-mobile')) {
+            thirdCard.classList.add('hidden-on-mobile');
+          }
+          if (loadMoreWrapper) loadMoreWrapper.style.display = 'block';
+        } else {
+          if (thirdCard && thirdCard.classList.contains('hidden-on-mobile')) {
+            thirdCard.classList.remove('hidden-on-mobile');
+          }
+          if (loadMoreWrapper) loadMoreWrapper.style.display = 'none';
+        }
+      }
+
+      updateInstructorVisibility();
+      window.addEventListener('resize', updateInstructorVisibility);
+
+      if (loadMoreBtn && thirdCard) {
+        loadMoreBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          thirdCard.classList.remove('hidden-on-mobile');
+          if (loadMoreWrapper) loadMoreWrapper.style.display = 'none';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

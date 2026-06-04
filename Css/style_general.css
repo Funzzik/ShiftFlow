@@ -1,0 +1,1438 @@
+/* Сброс отступов и способа расчета размеров */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Глобальные переменные с цветами */
+:root {
+    --amber-color: #f0c040;
+    --green-color: #4dc951;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Подключение шрифтов */
+@font-face {
+    font-family: "DelaGothicOne";
+    src: url(../fonts/DelaGothicOne-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Exo 2";
+    src: url(../fonts/Exo2-ExtraBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: "Exo 2";
+    src: url(../fonts/Exo2-SemiBold.ttf) format("truetype");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Days One";
+    src: url(../fonts/DaysOne-Regular.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+/* Общий контейнер для центровки контента */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Основные настройки body */
+body {
+    position: relative;
+    padding-top: 90px;
+    background-color: #1a1a1a;
+    overflow-x: hidden;
+    color: #ffffff;
+    font-family: "Exo 2", sans-serif;
+}
+
+/* Фиксированная шапка сайта */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(26, 26, 26, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header .container {
+    justify-content: space-between;
+}
+.logo {
+    margin: 0 auto;
+}
+
+/* Декоративные свечения */
+.glow-effect-right-bottom {
+    position: absolute;
+    top: -20vh;
+    right: -17vw;
+    width: 100vw;
+    height: 120vh;
+    background: radial-gradient(circle, rgba(9, 197, 15, 0.35) 0%, rgba(9, 197, 15, 0) 75%);
+    filter: blur(12vw);
+    z-index: 1;
+    pointer-events: none;
+}
+.glow-effect-right-bottom-1 {
+    position: absolute;
+    top: 150vh;
+    right: -15vw;
+    width: 70vw;
+    height: 90vh;
+    background: radial-gradient(circle, rgba(9, 197, 15, 0.35) 0%, rgba(9, 197, 15, 0) 75%);
+    filter: blur(12vw);
+    z-index: 1;
+    pointer-events: none;
+}
+.glow-effect-left-bottom {
+    position: absolute;
+    bottom: 10vh;
+    left: -10vw;
+    width: 70vw;
+    height: 80vh;
+    background: radial-gradient(circle, rgba(9, 197, 15, 0.35) 0%, rgba(9, 197, 15, 0) 70%);
+    filter: blur(12vw);
+    z-index: 1;
+    pointer-events: none;
+}
+.glow-effect-left-bottom-1 {
+    position: absolute;
+    bottom: 250vh;
+    left: -10vw;
+    width: 70vw;
+    height: 80vh;
+    background: radial-gradient(circle, rgba(9, 197, 15, 0.35) 0%, rgba(9, 197, 15, 0) 70%);
+    filter: blur(12vw);
+    z-index: 1;
+    pointer-events: none;
+}
+.glow-effect-footer {
+    position: absolute;
+    bottom: -15vh;
+    left: 5vw;
+    width: 80vw;
+    height: 80vh;
+    background: radial-gradient(circle, rgba(77, 201, 81, 0.25) 0%, rgba(77, 201, 81, 0) 70%);
+    filter: blur(5vw);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Блок навигации внутри шапки */
+nav {
+    display: flex;
+    gap: 50px;
+}
+nav a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-family: "Days One";
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+nav a:hover {
+    color: var(--green-color);
+}
+.logo img {
+    height: 80px;
+    display: block;
+}
+
+/* ========== БУРГЕР-МЕНЮ ========== */
+.burger-btn {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--amber-color);
+    color: var(--amber-color);
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1001;
+}
+.burger-btn:hover {
+    background-color: var(--amber-color);
+    color: #1A1A1A;
+}
+.mobile-nav {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    transform: translateY(-120%);
+    transition: transform 0.3s ease;
+}
+.mobile-nav.open {
+    transform: translateY(0);
+}
+.mobile-nav a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-family: "Days One";
+    font-size: 20px;
+}
+.mobile-nav a:hover {
+    color: var(--green-color);
+}
+
+/* ========== СЕКЦИЯ "О НАС" ========== */
+.about-section {
+    padding: 60px 0 80px;
+}
+.about-container {
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1100px;
+}
+.page-title {
+    font-family: "DelaGothicOne";
+    font-size: 58px;
+    color: var(--green-color);
+    text-align: center;
+    line-height: 1.2;
+}
+.intro-text {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #ffffff;
+    text-align: left;
+}
+.highlight {
+    color: var(--green-color);
+}
+
+/* ========== СЕКЦИЯ "КАК МЫ РАБОТАЕМ?" ========== */
+.work-section {
+    padding-bottom: 100px;
+}
+.work-container {
+    flex-direction: column;
+}
+.section-title {
+    font-family: "DelaGothicOne";
+    font-size: 58px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    width: 100%;
+}
+.work-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.work-image-wrapper {
+    position: relative;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+.work-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+.work-image-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 220px;
+    height: 199px;
+    border-top: 3px solid var(--amber-color);
+    border-right: 3px solid var(--amber-color);
+    z-index: 2;
+    pointer-events: none;
+}
+.work-image-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 220px;
+    height: 199px;
+    border-bottom: 3px solid var(--amber-color);
+    border-left: 3px solid var(--amber-color);
+    z-index: 2;
+    pointer-events: none;
+}
+.work-card-title {
+    font-family: "Exo 2";
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--green-color);
+    line-height: 1.35;
+}
+.work-card-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+}
+.work-card-tagline {
+    font-weight: 600;
+    color: var(--green-color);
+}
+
+/* ========== СЕКЦИЯ "НАШ АВТОПАРК" ========== */
+.fleet-section {
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 10;
+}
+.fleet-container {
+    flex-direction: column;
+    width: 100%;
+}
+.fleet-title {
+    font-family: "DelaGothicOne";
+    font-size: 58px;
+    color: var(--green-color);
+    text-align: center;
+    margin-bottom: 60px;
+}
+.fleet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+    margin-top: 40px;
+}
+.fleet-card {
+    border: 1px solid var(--green-color);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+.fleet-image {
+    width: 100%;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+.fleet-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+.fleet-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.fleet-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fleet-label {
+    font-family: "Exo 2", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--green-color);
+}
+.fleet-value {
+    font-family: "Exo 2", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: right;
+}
+.fleet-desc {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.fleet-desc p {
+    font-family: "Exo 2", sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+.hidden-mobile {
+    display: none;
+}
+
+/* ========== КНОПКА "ЗАГРУЗИТЬ ЕЩЁ" ========== */
+.btn-load-more {
+    background: transparent;
+    border: 1px solid var(--amber-color);
+    color: var(--amber-color);
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 15px 50px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+}
+.btn-load-more:hover {
+    background-color: var(--amber-color);
+    color: #1A1A1A;
+}
+
+/* ========== СЕКЦИЯ УСЛУГ (ЗАГОЛОВКИ) ========== */
+.services-main-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.services-main-title .title-top {
+    font-family: "DelaGothicOne";
+    font-size: 48px;
+    color: #ffffff;
+    line-height: 1;
+}
+.services-main-title .title-bottom {
+    font-family: "DelaGothicOne";
+    font-size: 64px;
+    color: var(--green-color);
+    line-height: 1;
+    margin-top: 5px;
+}
+.subtitle-training {
+    font-family: "DelaGothicOne";
+    font-size: 28px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: normal;
+}
+
+/* ========== СЕКЦИЯ СТОИМОСТИ ОБУЧЕНИЯ ========== */
+.pricing-section {
+    position: relative;
+    z-index: 10;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pricing-container {
+    flex-direction: column;
+    width: 100%;
+}
+.pricing-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.pricing-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card {
+    background-color: transparent;
+    border: 1px solid var(--green-color);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: white;
+    font-family: "Exo 2", sans-serif;
+    flex: 1 1 30%;
+    min-width: 320px;
+    max-width: 386px;
+}
+.bottom-row .wide-card {
+    flex: 1 1 45%;
+    max-width: 590px;
+}
+.badge {
+    position: absolute;
+    top: -16px;
+    right: 20px;
+    background-color: var(--amber-color);
+    color: #1a1a1a;
+    padding: 6px 20px;
+    border-radius: 6px;
+    font-weight: 800;
+    font-size: 14px;
+    z-index: 2;
+}
+.card-content {
+    padding: 30px 25px;
+    flex-grow: 1;
+}
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+.category-letter {
+    font-size: 64px;
+    font-family: "DelaGothicOne";
+    color: var(--green-color);
+    line-height: 0.8;
+}
+.retraining-title {
+    display: flex;
+    flex-direction: column;
+}
+.retraining-label {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.retraining-letters {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+.retraining-letters .category-letter {
+    font-size: 48px;
+}
+.retraining-mid {
+    font-size: 20px;
+    font-weight: 800;
+}
+.price-block {
+    text-align: right;
+}
+.current-price {
+    font-family: "DelaGothicOne";
+    font-size: 32px;
+    font-weight: normal;
+}
+.old-price {
+    text-decoration: line-through;
+    font-family: "DelaGothicOne";
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: -3px;
+}
+.features {
+    list-style: none;
+    padding: 0;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+.features li {
+    margin-bottom: 6px;
+}
+.features .highlight {
+    color: var(--amber-color);
+    margin-top: 15px;
+}
+.btn-card {
+    background-color: var(--amber-color);
+    color: #1a1a1a;
+    font-family: "Exo 2", sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: calc(100% + 2px);
+    margin: 0 -1px -1px -1px;
+    border-radius: 0 0 15px 15px;
+}
+.btn-card:hover {
+    background-color: #e0b030;
+}
+.pricing-footnote {
+    font-family: "Exo 2", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.4;
+    margin-top: 20px;
+    text-align: justify;
+    max-width: 800px;
+}
+
+/* ========== ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ ========== */
+.extra-services-section {
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 10;
+}
+.extra-container {
+    flex-direction: column;
+}
+.extra-title {
+    font-family: "DelaGothicOne";
+    font-size: 48px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.extra-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+.extra-card {
+    background: transparent;
+    border: 1px solid var(--green-color);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.extra-card-header {
+    padding: 30px 25px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.extra-card-title {
+    font-family: "DelaGothicOne";
+    font-size: 24px;
+    color: var(--green-color);
+    line-height: 1.1;
+    max-width: 60%;
+}
+.extra-price-block {
+    text-align: right;
+}
+.extra-current-price {
+    font-family: "DelaGothicOne";
+    font-size: 28px;
+    color: #ffffff;
+}
+.extra-old-price {
+    font-family: "DelaGothicOne";
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: line-through;
+    margin-top: -5px;
+}
+.extra-features {
+    list-style: none;
+    padding: 0 25px 30px;
+    flex-grow: 1;
+}
+.extra-features li {
+    font-family: "Exo 2", sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 8px;
+    position: relative;
+}
+.extra-highlight {
+    color: var(--amber-color) !important;
+    margin-top: 10px;
+}
+.btn-extra {
+    background-color: var(--amber-color);
+    color: #1a1a1a;
+    font-family: "Exo 2", sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    border: none;
+    padding: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+.btn-extra:hover {
+    background-color: #e0b030;
+}
+
+/* ========== ПОДВАЛ (FOOTER) ========== */
+.footer-section {
+    position: relative;
+    background-color: #1A1A1A;
+    overflow: hidden;
+    z-index: 10;
+}
+.footer-socials {
+    background-color: var(--green-color);
+    padding: 20px 0;
+    width: 100%;
+}
+.socials-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.social-link:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.footer-main {
+    padding: 60px 0 40px;
+    background: radial-gradient(circle at 20% 80%, rgba(9, 197, 15, 0.05) 0%, transparent 40%);
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.footer-contacts {
+    flex: 1;
+    min-width: 320px;
+    max-width: 500px;
+}
+.footer-title {
+    font-family: 'Days One', sans-serif;
+    font-size: 24px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+.contact-info p,
+.schedule-info p {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+.contact-info {
+    margin-bottom: 28px;
+}
+.footer-link-green {
+    display: block;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--green-color);
+    text-decoration: none;
+    margin: 15px 0 25px 0;
+    transition: opacity 0.3s ease;
+}
+.footer-link-green:hover {
+    opacity: 0.8;
+}
+.footer-map-section {
+    flex: 1;
+    min-width: 320px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+.map-title {
+    text-align: center;
+    width: 100%;
+}
+.map-wrapper {
+    width: 100%;
+    height: 500px;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    filter: invert(90%) hue-rotate(180deg) grayscale(20%) contrast(110%);
+    transition: filter 0.3s ease;
+}
+.map-wrapper:hover iframe {
+    filter: none;
+}
+.footer-bottom-container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+.footer-copyright {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* ========== МОДАЛЬНОЕ ОКНО (исправленное, полное) ========== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-box {
+    background-color: #1A1A1A;
+    border: 1px solid var(--green-color);
+    border-radius: 16px;
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(77, 201, 81, 0.15);
+}
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.modal-close-btn:hover {
+    transform: scale(1.1);
+}
+.modal-title {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--amber-color);
+    text-align: center;
+    margin-bottom: 30px;
+}
+.modal-input {
+    width: 100%;
+    background-color: #1A1A1A;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 15px 20px;
+    color: #FFFFFF;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
+    margin-bottom: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+.modal-input:focus {
+    border-color: var(--green-color);
+}
+.modal-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+.select-wrapper {
+    position: relative;
+}
+.custom-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    background: transparent;
+    background-image: none;
+}
+.custom-select option {
+    background: #1A1A1A;
+    color: #FFFFFF;
+}
+.select-wrapper::after {
+    content: "▼";
+    font-size: 12px;
+    color: var(--amber-color); 
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.modal-note {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.3);
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.modal-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+.modal-checkbox-label input {
+    display: none;
+}
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--green-color);
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.error-checkbox {
+    border-color: red !important;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
+.modal-checkbox-label input:checked + .custom-checkbox::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 4px;
+    height: 10px;
+    border: solid var(--green-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.checkbox-text {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 11px;
+    color: var(--amber-color);
+    line-height: 1.3;
+}
+.modal-submit-btn {
+    background-color: var(--amber-color);
+    color: #1A1A1A;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+.modal-submit-btn:hover {
+    opacity: 0.8;
+}
+.modal-success-text {
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--amber-color);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+.modal-link {
+    color: var(--green-color);
+    text-decoration: none;
+}
+.modal-link:hover {
+    text-decoration: underline;
+}
+.modal-success-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ========== АДАПТИВ ПОД ПЛАНШЕТЫ (≤768px) ========== */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+    .burger-btn {
+        display: block;
+    }
+    body {
+        padding-top: 80px;
+    }
+    .logo img {
+        height: 60px;
+    }
+    .mobile-nav {
+        top: 70px;
+    }
+    .mobile-nav a {
+        font-size: 22px;
+    }
+    .work-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    .work-card-title {
+        font-size: 18px;
+    }
+    .work-card-text {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    .work-image-wrapper::before,
+    .work-image-wrapper::after {
+        width: 80px;
+        height: 70px;
+        border-width: 2px;
+    }
+    .page-title,
+    .section-title,
+    .fleet-title {
+        font-size: 42px;
+        margin-bottom: 30px;
+    }
+    .services-main-title .title-top {
+        font-size: 32px;
+    }
+    .services-main-title .title-bottom {
+        font-size: 48px;
+    }
+    .subtitle-training {
+        font-size: 24px;
+    }
+    .extra-title {
+        font-size: 38px;
+    }
+    .fleet-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .fleet-card {
+        padding: 15px;
+    }
+    .fleet-label,
+    .fleet-value {
+        font-size: 14px;
+    }
+    .pricing-section {
+        padding: 60px 20px;
+    }
+    .pricing-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .card,
+    .bottom-row .wide-card {
+        min-width: 260px;
+        flex: 1 1 30%;
+    }
+    .category-letter {
+        font-size: 48px;
+    }
+    .current-price {
+        font-size: 28px;
+    }
+    .btn-card {
+        font-size: 16px;
+        padding: 15px;
+    }
+    .extra-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .extra-card-title {
+        font-size: 20px;
+    }
+    .extra-current-price {
+        font-size: 24px;
+    }
+    .glow-effect-right-bottom,
+    .glow-effect-right-bottom-1,
+    .glow-effect-left-bottom,
+    .glow-effect-left-bottom-1,
+    .glow-effect-footer {
+        display: none;
+    }
+    .btn-load-more {
+        padding: 12px 40px;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    .fleet-card.hidden-mobile {
+        display: none;
+    }
+    /* Модальное окно на планшетах */
+    .modal-box {
+        width: 95%;
+        padding: 25px 20px;
+        max-width: none;
+        margin: 20px;
+        border-radius: 20px;
+    }
+    .modal-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    .modal-input,
+    .select-wrapper .modal-input {
+        font-size: 16px;
+        padding: 14px 18px;
+        margin-bottom: 12px;
+        border-radius: 30px;
+    }
+    .modal-note {
+        font-size: 10px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+    .modal-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+    .modal-checkbox-label {
+        justify-content: center;
+        gap: 12px;
+    }
+    .checkbox-text {
+        font-size: 12px;
+        text-align: left;
+    }
+    .modal-submit-btn {
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 16px;
+        border-radius: 40px;
+    }
+    .modal-success-text {
+        font-size: 15px;
+        line-height: 1.5;
+        text-align: center;
+        margin: 20px 0;
+    }
+    .modal-link {
+        color: var(--amber-color);
+        text-decoration: none;
+        word-break: break-all;
+    }
+    .modal-success-footer {
+        margin-top: 20px;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .map-wrapper {
+        height: 350px;
+    }
+    .socials-container {
+        gap: 30px;
+    }
+    .social-link {
+        font-size: 16px;
+    }
+    .social-icon {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* ========== АДАПТИВ ПОД МОБИЛЬНЫЕ ТЕЛЕФОНЫ (≤425px) ========== */
+@media (max-width: 425px) {
+    body {
+        padding-top: 70px;
+    }
+    .container {
+        padding: 0 15px;
+        gap: 20px;
+    }
+    .logo img {
+        height: 45px;
+    }
+    .burger-btn {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+    .mobile-nav {
+        top: 60px;
+        gap: 12px;
+        padding: 15px;
+    }
+    .mobile-nav a {
+        font-size: 18px;
+    }
+    .page-title,
+    .section-title,
+    .fleet-title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    .services-main-title .title-top {
+        font-size: 24px;
+    }
+    .services-main-title .title-bottom {
+        font-size: 36px;
+    }
+    .subtitle-training {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    .extra-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .about-section {
+        padding: 20px 0 40px;
+    }
+    .intro-text {
+        font-size: 14px;
+        line-height: 1.45;
+    }
+    .work-section {
+        padding-bottom: 40px;
+    }
+    .work-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .work-card-title {
+        font-size: 20px;
+    }
+    .work-card-text {
+        font-size: 14px;
+    }
+    .work-image-wrapper::before,
+    .work-image-wrapper::after {
+        width: 60px;
+        height: 55px;
+        border-width: 2px;
+    }
+    .fleet-section {
+        padding-bottom: 40px;
+    }
+    .fleet-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .fleet-card {
+        padding: 12px;
+    }
+    .fleet-label,
+    .fleet-value {
+        font-size: 13px;
+    }
+    .fleet-desc p {
+        font-size: 12px;
+    }
+    .btn-load-more {
+        padding: 10px 30px;
+        font-size: 14px;
+        margin-top: 15px;
+        width: 100%;
+        max-width: 280px;
+    }
+    .pricing-section {
+        padding: 40px 15px;
+    }
+    .pricing-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .card,
+    .bottom-row .wide-card {
+        min-width: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+    .card-content {
+        padding: 20px 18px;
+    }
+    .category-letter {
+        font-size: 42px;
+    }
+    .retraining-letters .category-letter {
+        font-size: 32px;
+    }
+    .current-price {
+        font-size: 26px;
+    }
+    .old-price {
+        font-size: 14px;
+    }
+    .features {
+        font-size: 13px;
+    }
+    .btn-card {
+        font-size: 15px;
+        padding: 14px;
+    }
+    .pricing-footnote {
+        font-size: 10px;
+        text-align: left;
+    }
+    .extra-services-section {
+        padding-bottom: 40px;
+    }
+    .extra-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .extra-card-header {
+        padding: 18px 18px 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .extra-card-title {
+        font-size: 20px;
+        max-width: 100%;
+    }
+    .extra-price-block {
+        text-align: left;
+    }
+    .extra-current-price {
+        font-size: 24px;
+    }
+    .extra-old-price {
+        font-size: 14px;
+    }
+    .extra-features {
+        padding: 0 18px 20px;
+    }
+    .extra-features li {
+        font-size: 13px;
+    }
+    .btn-extra {
+        font-size: 15px;
+        padding: 14px;
+    }
+    .modal-box {
+        width: 92%;
+        padding: 20px 15px;
+        margin: 10px;
+    }
+    .modal-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .modal-input,
+    .select-wrapper .modal-input {
+        font-size: 14px;
+        padding: 12px 15px;
+        margin-bottom: 10px;
+    }
+    .modal-note {
+        font-size: 9px;
+        margin-left: 5px;
+        margin-bottom: 15px;
+    }
+    .modal-footer {
+        gap: 15px;
+    }
+    .checkbox-text {
+        font-size: 11px;
+    }
+    .modal-submit-btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+    .modal-success-text {
+        font-size: 13px;
+    }
+    .footer-main {
+        padding: 30px 0 20px;
+    }
+    .socials-container {
+        gap: 20px;
+    }
+    .social-link {
+        gap: 8px;
+        font-size: 14px;
+    }
+    .social-icon {
+        width: 28px;
+        height: 28px;
+    }
+    .footer-title {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    .contact-info p,
+    .schedule-info p {
+        font-size: 14px;
+    }
+    .footer-link-green {
+        font-size: 13px;
+    }
+    .map-wrapper {
+        height: 250px;
+    }
+    .footer-copyright {
+        font-size: 9px;
+    }
+    .glow-effect-right-bottom,
+    .glow-effect-right-bottom-1,
+    .glow-effect-left-bottom,
+    .glow-effect-left-bottom-1,
+    .glow-effect-footer {
+        display: none;
+    }
+}

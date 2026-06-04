@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oбщая страница - Shift Flow</title>
+    <link rel="stylesheet" href="./Css/style_general.css">
+    <link rel="icon" href="./images/car-icon.svg" type="image/x-icon" />
+</head>
+<body>
+   <!-- Эффекты свечения -->
+    <div class="glow-effect-right-bottom"></div>
+    <div class="glow-effect-right-bottom-1"></div>
+    <div class="glow-effect-left-bottom"></div>
+    <div class="glow-effect-left-bottom-1"></div>
+
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-left desktop-nav">
+                <a href="./index.html">Главная</a>
+                <a href="#contact">Контакты</a>
+            </nav>
+            <div class="logo">
+                <a href="./index.html"><img src="./images/logotip.png" alt="Shift Flow" /></a>
+            </div>
+            <nav class="nav-right desktop-nav">
+                <a href="./general.html#carpark">Автопарк</a>
+                <a href="./general.html#services">Услуги</a>
+            </nav>
+            <button class="burger-btn" id="burgerBtn">Меню</button>
+        </div>
+    </header>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="./index.html">Главная</a>
+        <a href="#contact">Контакты</a>
+        <a href="./general.html#carpark">Автопарк</a>
+        <a href="./general.html#services">Услуги</a>
+    </div>
+
+    <!-- Блок О нас -->
+    <section class="about-section">
+        <div class="container about-container">
+            <h1 class="page-title">О нас</h1>
+            <p class="intro-text">
+                <span class="highlight">Shift Flow</span> — это не просто автошкола. Это место, где страх перед рулём превращается в уверенный поток. Мы появились в Вологде, чтобы перестать учить «как надо по билетам» и начать учить «как бывает в жизни». Без криков, без зубрёжки, без бессмысленных кругов по автодрому.
+                <br><br>
+                Потому что в реальном мире никто не крикнет «Сцепление!» на перекрёстке. В реальном мире нет второй попытки припарковаться у торгового центра в час пик. И в реальном мире важен не заученный билет, а спокойная голова и руки, которые помнят, что делать.
+                <br><br>
+                Мы не готовим вас к экзамену. Мы готовим вас к тому, что начнётся после него. К самостоятельным поездкам, к первым дальним маршрутам, к уверенности в себе за рулём любой машины.
+            </p>
+        </div>
+    </section>
+
+    <!-- Блок Как мы работаем? -->
+    <section class="work-section">
+        <div class="container work-container">
+            <h2 class="section-title">Как мы работаем?</h2>
+            <div class="work-grid">
+                <div class="work-card">
+                    <div class="work-image-wrapper">
+                        <img src="./images/block-work-pedali.png" alt="Педали">
+                    </div>
+                    <h3 class="work-card-title">Никакой «каши в педалях»</h3>
+                    <p class="work-card-text">
+                        Мы не учим нажимать сцепление по таймеру. Мы учим чувствовать машину — когда газ, когда тормоз, когда просто выдохнуть.<br><br>
+                        Вы не услышите «жми на счёт три». В реальной жизни никто не считает. Вместо этого мы даём ощущение: мотор урчит — пора переключаться. Машина дёргается — вы поймёте почему.<br><br>
+                        <span class="highlight">Shift Flow - </span><span class="work-card-tagline">педали не путают — их просто не чувствуют</span>
+                    </p>
+                </div>
+                <div class="work-card">
+                    <div class="work-image-wrapper">
+                        <img src="./images/block-work-instrucor.png" alt="Инструктор">
+                    </div>
+                    <h3 class="work-card-title">Инструкторы — не надзиратели</h3>
+                    <p class="work-card-text">
+                        Вы не услышите от них «ну что ж ты делаешь?» или «я же сто раз говорил». Вместо этого — пауза, короткое объяснение, повторение. Без стыда, без давления, без ощущения, что вас оценивают.<br><br>
+                        Потому что мы помним: каждый, кто сейчас уверенно ведёт машину, когда-то глох на перекрёстках и боялся параллельной парковки. Разница только в том, кто сидел рядом.<br><br>
+                        Наши инструкторы — это те, кто будет на вашей стороне. Даже когда вы в третий раз не попали в ряд. Даже когда заглохли на зелёный. Даже когда вам кажется, что ничего не получается.<br><br>
+                        <span class="highlight">Shift Flow - </span><span class="work-card-tagline">рядом с вами, а не над вами</span>
+                    </p>
+                </div>
+                <div class="work-card">
+                    <div class="work-image-wrapper">
+                        <img src="./images/block-work-city.png" alt="Город">
+                    </div>
+                    <h3 class="work-card-title">Реальный город с первых занятий</h3>
+                    <p class="work-card-text">
+                        Пробки, перекрёстки, парковка у ТЦ — всё, с чем вы столкнётесь за рулём, мы проходим вместе.<br><br>
+                        Мы не возим вас по пустым двором и не наматываем круги на автодроме ради галочки. С первых занятий вы оказываетесь в живом потоке. Потому что экзамен и настоящая жизнь — это не пустая площадка, а люди, светофоры, неожиданные «вежливые» водители, которые пропускают, и те, кто подрезает.<br><br>
+                        Мы не готовим вас к идеальной дороге. Потому что её не существует. Мы готовим вас к реальной.<br><br>
+                        <span class="highlight">Shift Flow - </span><span class="work-card-tagline">в город с первого занятия</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Автопарк -->
+    <section class="fleet-section">
+        <div class="container fleet-container">
+            <h2 class="fleet-title" id="carpark">Наш автопарк</h2>
+            <div class="fleet-grid">
+                <div class="fleet-card">
+                    <div class="fleet-image"><img src="./images/avtoparc-1.png" alt="Hyundai Solaris"></div>
+                    <div class="fleet-info">
+                        <div class="fleet-row"><span class="fleet-label">Модель</span><span class="fleet-value">Hyundai Solaris</span></div>
+                        <div class="fleet-row"><span class="fleet-label">Год выпуска</span><span class="fleet-value">2022 год</span></div>
+                        <div class="fleet-row"><span class="fleet-label">КПП</span><span class="fleet-value">Механика (5 ступеней)</span></div>
+                        <div class="fleet-row"><span class="fleet-label">Категория</span><span class="fleet-value">B</span></div>
+                        <div class="fleet-desc"><span class="fleet-label">Краткое описание:</span><p>Понятное сцепление, предсказуемый газ. На ней не страшно глохнуть — она прощает ошибки.</p></div>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-image"><img src="./images/avtoparc-2.png" alt="Kia Rio"></div>
+                    <div class="fleet-info">
+                        <div class="fleet-row"><span class="fleet-label">Модель</span><span class="fleet-value">Kia Rio</span></div>
+                        <div class="fleet-row"><span class="fleet-label">Год выпуска</span><span class="fleet-value">2023 год</span></div>
+                        <div class="fleet-row"><span class="fleet-label">КПП</span><span class="fleet-value">Автомат (6 ступеней)</span></div>
+                        <div class="fleet-row"><span class="fleet-label">Категория</span><span class="fleet-value">B</span></div>
+                        <div class="fleet-desc"><span class="fleet-label">Краткое описание:</span><p>Плавный разгон, комфортный салон. Учим сразу на автомате — без переучивания.</p></div>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-image"><img src="./images/avtoparc-3.png" alt="Yamaha MT-07"></div>
+                    <div class="fleet-info">
+                        <div class="fleet-row"><span class="fleet-label">Модель</span><span class="fleet-value">Yamaha MT-07</span></div>
+                        <div class="fleet-row"><span class="fleet-label">Год выпуска</span><span class="fleet-value">2021 год</span></div>
+                        <div class="fleet-row"><span class="fleet-label">КПП</span><span class="fleet-value">Механика (6 ступеней)</span></div>
+                        <div class="fleet-row"><span class="fleet-label">Категория</span><span class="fleet-value">A</span></div>
+                        <div class="fleet-desc"><span class="fleet-label">Краткое описание:</span><p>Лёгкий, манёвренный, прощающий ошибки новичка. Идеальный мотоцикл для первого сезона.</p></div>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-image"><img src="./images/avtoparc-4.png" alt="ПАЗ 3205"></div>
+                    <div class="fleet-info">
+                        <div class="fleet-row"><span class="fleet-label">Модель</span><span class="fleet-value">ПАЗ 3205</span></div>
+                        <div class="fleet-row"><span class="fleet-label">Год выпуска</span><span class="fleet-value">2019 год</span></div>
+                        <div class="fleet-row"><span class="fleet-label">КПП</span><span class="fleet-value">Механика (5 ступеней)</span></div>
+                        <div class="fleet-row"><span class="fleet-label">Категория</span><span class="fleet-value">D</span></div>
+                        <div class="fleet-desc"><span class="fleet-label">Краткое описание:</span><p>Настоящий автобус для настоящей подготовки. Вместительный салон, легкое обучение.</p></div>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-image"><img src="./images/avtoparc-5.png" alt="ГАЗель NEXT"></div>
+                    <div class="fleet-info">
+                        <div class="fleet-row"><span class="fleet-label">Модель</span><span class="fleet-value">ГАЗель NEXT</span></div>
+                        <div class="fleet-row"><span class="fleet-label">Год выпуска</span><span class="fleet-value">2021 год</span></div>
+                        <div class="fleet-row"><span class="fleet-label">КПП</span><span class="fleet-value">Механика (5 ступеней)</span></div>
+                        <div class="fleet-row"><span class="fleet-label">Категория</span><span class="fleet-value">C</span></div>
+                        <div class="fleet-desc"><span class="fleet-label">Краткое описание:</span><p>Лёгкий грузовик для уверенного старта в категории C. Понятная коробка, хороший обзор.</p></div>
+                    </div>
+                </div>
+                <div class="fleet-card">
+                    <div class="fleet-image"><img src="./images/avtoparc-6.png" alt="Racer RC200"></div>
+                    <div class="fleet-info">
+                        <div class="fleet-row"><span class="fleet-label">Модель</span><span class="fleet-value">Racer RC200</span></div>
+                        <div class="fleet-row"><span class="fleet-label">Год выпуска</span><span class="fleet-value">2022 год</span></div>
+                        <div class="fleet-row"><span class="fleet-label">КПП</span><span class="fleet-value">Механика (5 ступеней)</span></div>
+                        <div class="fleet-row"><span class="fleet-label">Категория</span><span class="fleet-value">A1 (до 125 см³ / до 11 кВт)</span></div>
+                        <div class="fleet-desc"><span class="fleet-label">Краткое описание:</span><p>Лёгкий, манёвренный, прощающий ошибки. Подходит для категории A1 — с 16 лет.</p></div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-load-more" id="loadMoreBtn">Загрузить еще</button>
+        </div>
+    </section>
+
+    <!-- Блок Стоимость / Услуги -->
+    <section class="pricing-section">
+        <div class="container pricing-container">
+            <div class="services-main-title">
+                <span class="title-top" id="services">Услуги</span>
+                <span class="title-bottom">SHIFT FLOW</span>
+            </div>
+            <h3 class="subtitle-training">Обучение и переобучение</h3>
+            <div class="pricing-wrapper">
+                <div class="pricing-row">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="header-row">
+                                <span class="category-letter">A</span>
+                                <div class="price-block">
+                                    <div class="current-price">14 900 ₽</div>
+                                    <div class="old-price">18 000 ₽</div>
+                                </div>
+                            </div>
+                            <ul class="features">
+                                <li>Цена с учетом трат бензина</li>
+                                <li>Срок обучения 1 месяц</li>
+                                <li>18 часов вождения</li>
+                                <li class="highlight">При наличии категории B</li>
+                            </ul>
+                        </div>
+                        <button class="btn-card btn-open-modal">Записаться на обучение</button>
+                    </div>
+                    <div class="card">
+                        <div class="badge">Доступна рассрочка</div>
+                        <div class="card-content">
+                            <div class="header-row">
+                                <span class="category-letter">B</span>
+                                <div class="price-block">
+                                    <div class="current-price">37 900 ₽</div>
+                                    <div class="old-price">41 000 ₽</div>
+                                </div>
+                            </div>
+                            <ul class="features">
+                                <li>Цена с учетом трат бензина</li>
+                                <li>Срок обучения 2,5 месяца</li>
+                                <li>68 (МКПП) и 64 (АКПП) часов вождения</li>
+                            </ul>
+                        </div>
+                        <button class="btn-card btn-open-modal">Записаться на обучение</button>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="header-row">
+                                <span class="category-letter">C</span>
+                                <div class="price-block">
+                                    <div class="current-price">34 900 ₽</div>
+                                    <div class="old-price">38 000 ₽</div>
+                                </div>
+                            </div>
+                            <ul class="features">
+                                <li>Цена с учетом трат бензина</li>
+                                <li>Срок обучения 1,5 месяца</li>
+                                <li>38 часов вождения</li>
+                                <li class="highlight">При наличии категории B</li>
+                            </ul>
+                        </div>
+                        <button class="btn-card btn-open-modal">Записаться на обучение</button>
+                    </div>
+                </div>
+                <div class="pricing-row bottom-row">
+                    <div class="card wide-card">
+                        <div class="card-content">
+                            <div class="header-row">
+                                <div class="retraining-title">
+                                    <span class="retraining-label">Переобучение</span>
+                                    <div class="retraining-letters">
+                                        <span class="category-letter">B</span>
+                                        <span class="retraining-mid">на</span>
+                                        <span class="category-letter">D</span>
+                                    </div>
+                                </div>
+                                <div class="price-block">
+                                    <div class="current-price">41 900 ₽</div>
+                                    <div class="old-price">47 000 ₽</div>
+                                </div>
+                            </div>
+                            <ul class="features">
+                                <li>Цена с учетом трат бензина</li>
+                                <li>Срок обучения 2.5 месяца</li>
+                                <li>88 часов вождения</li>
+                                <li class="highlight">При наличии категории B</li>
+                            </ul>
+                        </div>
+                        <button class="btn-card btn-open-modal">Записаться на обучение</button>
+                    </div>
+                    <div class="card wide-card">
+                        <div class="card-content">
+                            <div class="header-row">
+                                <div class="retraining-title">
+                                    <span class="retraining-label">Переобучение</span>
+                                    <div class="retraining-letters">
+                                        <span class="category-letter">C</span>
+                                        <span class="retraining-mid">на</span>
+                                        <span class="category-letter">D</span>
+                                    </div>
+                                </div>
+                                <div class="price-block">
+                                    <div class="current-price">33 900 ₽</div>
+                                    <div class="old-price">36 000 ₽</div>
+                                </div>
+                            </div>
+                            <ul class="features">
+                                <li>Цена с учетом трат бензина</li>
+                                <li>Срок обучения 1.5 месяца</li>
+                                <li>52 часов вождения</li>
+                                <li class="highlight">При наличии категории B</li>
+                            </ul>
+                        </div>
+                        <button class="btn-card btn-open-modal">Записаться на обучение</button>
+                    </div>
+                </div>
+            </div>
+            <p class="pricing-footnote">
+                Мы получаем очень много заявок, поэтому точное попадание в желаемую группу зависит от текущей загрузки. Наш менеджер свяжется с вами и предложит ближайшие доступные слоты — возможно, даже раньше, чем вы планировали.
+            </p>
+        </div>
+    </section>
+
+    <!-- Дополнительные услуги -->
+    <section class="extra-services-section">
+        <div class="container extra-container">
+            <h2 class="extra-title">Дополнительные услуги</h2>
+            <div class="extra-grid">
+                <div class="extra-card">
+                    <div class="extra-card-header">
+                        <div class="extra-card-title">Интенсивный курс</div>
+                        <div class="extra-price-block">
+                            <div class="extra-current-price">54 900 ₽</div>
+                            <div class="extra-old-price">68 000 ₽</div>
+                        </div>
+                    </div>
+                    <ul class="extra-features">
+                        <li>30 занятий до результата</li>
+                        <li>Срок обучения 3 месяца</li>
+                        <li>40 часов вождения</li>
+                        <li>3 попытки экзамена за наш счет</li>
+                    </ul>
+                    <button class="btn-extra btn-open-modal">Записаться на обучение</button>
+                </div>
+                <div class="extra-card">
+                    <div class="extra-card-header">
+                        <div class="extra-card-title">Только теория</div>
+                        <div class="extra-price-block">
+                            <div class="extra-current-price">10 900 ₽</div>
+                            <div class="extra-old-price">15 000 ₽</div>
+                        </div>
+                    </div>
+                    <ul class="extra-features">
+                        <li>Онлайн доступ ко всем вопросам и подготовительным материалам</li>
+                        <li>Срок обучения 1 месяц</li>
+                        <li>Бот с билетами + сертификат прохождения</li>
+                    </ul>
+                    <button class="btn-extra btn-open-modal">Записаться на обучение</button>
+                </div>
+                <div class="extra-card">
+                    <div class="extra-card-header">
+                        <div class="extra-card-title">Дополнительные занятия</div>
+                        <div class="extra-price-block">
+                            <div class="extra-current-price">1199 ₽/час</div>
+                        </div>
+                    </div>
+                    <ul class="extra-features">
+                        <li>Любое количество в любое время вне зависимости от погодных условий</li>
+                        <li>Подстраиваем график под вас</li>
+                        <li class="extra-highlight">При наличии активного обучения</li>
+                    </ul>
+                    <button class="btn-extra btn-open-modal">Записаться на обучение</button>
+                </div>
+                <div class="extra-card">
+                    <div class="extra-card-header">
+                        <div class="extra-card-title">Онлайн-курс ПДД</div>
+                        <div class="extra-price-block">
+                            <div class="extra-current-price">9 999 ₽</div>
+                            <div class="extra-old-price">14 000 ₽</div>
+                        </div>
+                    </div>
+                    <ul class="extra-features">
+                        <li>Доступ на 6 месяцев</li>
+                        <li>В курсе множество видеоуроков и тестов для закрепления материала.</li>
+                        <li>Подробное описание дорожных знаков и их значений.</li>
+                    </ul>
+                    <button class="btn-extra btn-open-modal">Записаться на обучение</button>
+                </div>
+                <div class="extra-card">
+                    <div class="extra-card-header">
+                        <div class="extra-card-title">Помощь в сдаче экзамена</div>
+                        <div class="extra-price-block">
+                            <div class="extra-current-price">0 ₽</div>
+                            <div class="extra-old-price">4 000 ₽</div>
+                        </div>
+                    </div>
+                    <ul class="extra-features">
+                        <li>+ К основному обучению добавляется 4 бесплатных поездки по городу</li>
+                        <li>Подготавливаем отдельно к сдаче теории</li>
+                        <li class="extra-highlight">При наличии активного обучения(A, B, D, C, A1)</li>
+                    </ul>
+                    <button class="btn-extra btn-open-modal">Записаться на обучение</button>
+                </div>
+                <div class="extra-card">
+                    <div class="extra-card-header">
+                        <div class="extra-card-title">Пересдача экзамена</div>
+                        <div class="extra-price-block">
+                            <div class="extra-current-price">0 ₽</div>
+                            <div class="extra-old-price">6 000 ₽</div>
+                        </div>
+                    </div>
+                    <ul class="extra-features">
+                        <li>+ Одна бесплатная попытка пересдачи без доплаты за бензин.</li>
+                        <li class="extra-highlight">При наличии активного обучения(A, B, D, C, A1)</li>
+                    </ul>
+                    <button class="btn-extra btn-open-modal">Записаться на обучение</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно (исправленное) -->
+    <div class="modal-overlay" id="enrollModal">
+        <div class="modal-box" id="modalFormBox">
+            <button class="modal-close-btn" id="closeFormBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="var(--amber-color)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <h3 class="modal-title">Записаться на обучение</h3>
+            <form id="enrollmentForm" novalidate>
+                <input type="text" class="modal-input" placeholder="*Ваше ФИО" required>
+                <input type="tel" id="phoneInput" class="modal-input" placeholder="*Ваш номер телефона" required>
+                <div class="select-wrapper">
+                    <select class="modal-input custom-select" required>
+                        <option value="" disabled selected hidden>*Категория обучения</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="D">D</option>
+                        <option value="Интенсивный курс">Интенсивный курс</option>
+                        <option value="Только теория">Только теория</option>
+                        <option value="Доп.занятия">Доп.занятия</option>
+                        <option value="Онлайн курс ПДД">Онлайн курс ПДД</option>
+                    </select>
+                </div>
+                <input type="text" class="modal-input" placeholder="*Когда готовы приступить к обучению?" required>
+                <p class="modal-note">То что помечено * обязательно к заполнению</p>
+                <div class="modal-footer">
+                    <label class="modal-checkbox-label">
+                        <input type="checkbox" id="policyCheckbox" required>
+                        <span class="custom-checkbox" id="customCheckmark"></span>
+                        <span class="checkbox-text">Я согласен(на) на обработку персональных данных</span>
+                    </label>
+                    <button type="submit" class="modal-submit-btn">Отправить</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-box" id="modalSuccessBox" style="display: none;">
+            <h3 class="modal-title">Благодарим за запись!</h3>
+            <p class="modal-success-text">Наш менеджер свяжется с вами<br>в течение 30 минут.<br>Если через это время звонок не поступит, напишите нам в<br><a href="https://t.me/shiftflow" target="_blank" class="modal-link">Telegram</a> или<br>позвоните по номеру<br><a href="tel:+88005553535" class="modal-link">+8 (800) 555-35-35</a></p>
+            <div class="modal-success-footer">
+                <button class="modal-submit-btn" id="closeSuccessBtn">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="footer-section">
+        <div class="glow-effect-footer"></div>
+        <div class="footer-socials">
+            <div class="container socials-container">
+                <a href="#" class="social-link">
+                    <img src="./images/telegram-logo.svg" alt="Телеграм" class="social-icon">
+                    <span>Телеграм</span>
+                </a>
+                <a href="#" class="social-link">
+                    <img src="./images/vk-logo.svg" alt="ВКонтакте" class="social-icon">
+                    <span>ВКонтакте</span>
+                </a>
+                <a href="#" class="social-link">
+                    <img src="./images/ok-logo.svg" alt="Одноклассники" class="social-icon">
+                    <span>Одноклассники</span>
+                </a>
+            </div>
+        </div>
+        <div class="footer-main">
+            <div class="container footer-container">
+                <div class="footer-contacts" id="contact">
+                    <h3 class="footer-title">Свяжитесь с нами</h3>
+                    <div class="contact-info">
+                        <p>Адрес: Вологда, ул. Козленская дом 4 (Остановка «Центр»)</p>
+                        <p>Телефон для консультации: +7 (800) 555-35-35</p>
+                        <p>E-mail: ShiftFlow@mail.ru</p>
+                    </div>
+                    <a href="https://www.whatsapp.com/" class="footer-link-green">Написать в WhatsApp</a>
+                    <div class="schedule-info">
+                        <p>Режим работы:</p>
+                        <p>Пн — Пт 10:00 — 19:00.</p>
+                        <p>Сб 10:00 — 17:00.</p>
+                        <p>Вс — Выходной.</p>
+                        <p>Без обеденного перерыва</p>
+                    </div>
+                    <a href="#" class="footer-link-green">Документы и лицензии</a>
+                </div>
+                <div class="footer-map-section">
+                    <h3 class="footer-title map-title">Мы на картах:</h3>
+                    <div class="map-wrapper">
+                        <iframe 
+                            src="https://yandex.ru/map-widget/v1/?ll=39.884501%2C59.219808&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzE0NzM5MRJK0KDQvtGB0YHQuNGPLCDQktC-0LvQvtCz0LTQsCwg0JrQvtC30LvQtdC90YHQutCw0Y8g0YPQu9C40YbQsCwgNNC60JIiCg2cajpCFVw3X0I%2C&z=17" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0" 
+                            allowfullscreen="true" 
+                            style="position:relative;">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="container footer-bottom-container">
+                <p class="footer-copyright">
+                    © 2024–2026, Shift Flow. Все права защищены. Информация на сайте не является публичной офертой.<br>
+                    Уточняйте актуальные цены и условия у менеджеров.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ========== БУРГЕР-МЕНЮ ==========
+            const burgerBtn = document.getElementById('burgerBtn');
+            const mobileNav = document.getElementById('mobileNav');
+            const body = document.body;
+            if (burgerBtn && mobileNav) {
+                burgerBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    mobileNav.classList.toggle('open');
+                    burgerBtn.classList.toggle('active');
+                    body.classList.toggle('menu-open');
+                    burgerBtn.textContent = mobileNav.classList.contains('open') ? '✕' : 'Меню';
+                });
+                const navLinks = mobileNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileNav.classList.remove('open');
+                        burgerBtn.classList.remove('active');
+                        body.classList.remove('menu-open');
+                        burgerBtn.textContent = 'Меню';
+                    });
+                });
+                document.addEventListener('click', (e) => {
+                    if (mobileNav.classList.contains('open') && 
+                        !mobileNav.contains(e.target) && 
+                        !burgerBtn.contains(e.target)) {
+                        mobileNav.classList.remove('open');
+                        burgerBtn.classList.remove('active');
+                        body.classList.remove('menu-open');
+                        burgerBtn.textContent = 'Меню';
+                    }
+                });
+            }
+
+            // ========== АВТОПАРК: ЗАГРУЗИТЬ ЕЩЁ ==========
+            const fleetGrid = document.querySelector('.fleet-grid');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            if (fleetGrid && loadMoreBtn) {
+                const cards = Array.from(fleetGrid.querySelectorAll('.fleet-card'));
+                const initialVisible = 4;
+                function updateFleetVisibility() {
+                    const isMobile = window.innerWidth <= 768;
+                    if (isMobile) {
+                        cards.forEach((card, idx) => {
+                            if (idx >= initialVisible) card.classList.add('hidden-mobile');
+                            else card.classList.remove('hidden-mobile');
+                        });
+                        const hasHidden = cards.some(c => c.classList.contains('hidden-mobile'));
+                        loadMoreBtn.style.display = hasHidden ? 'block' : 'none';
+                    } else {
+                        cards.forEach(card => card.classList.remove('hidden-mobile'));
+                        loadMoreBtn.style.display = 'none';
+                    }
+                }
+                function onLoadMore() {
+                    cards.forEach(card => card.classList.remove('hidden-mobile'));
+                    loadMoreBtn.style.display = 'none';
+                }
+                updateFleetVisibility();
+                window.addEventListener('resize', updateFleetVisibility);
+                loadMoreBtn.addEventListener('click', onLoadMore);
+            }
+
+            // ========== МОДАЛЬНОЕ ОКНО (улучшенное) ==========
+            const modalOverlay = document.getElementById('enrollModal');
+            const modalFormBox = document.getElementById('modalFormBox');
+            const modalSuccessBox = document.getElementById('modalSuccessBox');
+            const openBtns = document.querySelectorAll('.btn-open-modal');
+            const closeFormBtn = document.getElementById('closeFormBtn');
+            const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+            const enrollmentForm = document.getElementById('enrollmentForm');
+            const phoneInput = document.getElementById('phoneInput');
+            const policyCheckbox = document.getElementById('policyCheckbox');
+            const customCheckmark = document.getElementById('customCheckmark');
+
+            // Форматирование телефона (как на главной)
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function (e) {
+                    let val = e.target.value.replace(/\D/g, '');
+                    if (val === '') {
+                        e.target.value = '';
+                        return;
+                    }
+                    if (val[0] === '7' || val[0] === '8') val = '7' + val.substring(1);
+                    else val = '7' + val;
+                    e.target.value = '+' + val.substring(0, 11);
+                });
+                phoneInput.addEventListener('focus', function (e) {
+                    if (e.target.value === '') e.target.value = '+7';
+                });
+            }
+
+            // Обработка ошибки чекбокса
+            if (policyCheckbox && customCheckmark) {
+                policyCheckbox.addEventListener('change', () => {
+                    if (policyCheckbox.checked) customCheckmark.classList.remove('error-checkbox');
+                });
+            }
+
+            function openModal() {
+                if (modalOverlay) modalOverlay.classList.add('active');
+                if (modalFormBox) modalFormBox.style.display = 'block';
+                if (modalSuccessBox) modalSuccessBox.style.display = 'none';
+                document.body.style.overflow = 'hidden';
+            }
+            function closeModal() {
+                if (modalOverlay) modalOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            if (openBtns.length) {
+                openBtns.forEach(btn => btn.addEventListener('click', openModal));
+            }
+            if (closeFormBtn) closeFormBtn.addEventListener('click', closeModal);
+            if (closeSuccessBtn) closeSuccessBtn.addEventListener('click', closeModal);
+            if (modalOverlay) {
+                modalOverlay.addEventListener('click', (e) => {
+                    if (e.target === modalOverlay) closeModal();
+                });
+            }
+
+            if (enrollmentForm) {
+                enrollmentForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    let isValid = true;
+                    if (policyCheckbox && !policyCheckbox.checked) {
+                        if (customCheckmark) customCheckmark.classList.add('error-checkbox');
+                        isValid = false;
+                    }
+                    if (phoneInput && phoneInput.value.length < 12) {
+                        phoneInput.style.borderColor = 'red';
+                        isValid = false;
+                    } else if (phoneInput) {
+                        phoneInput.style.borderColor = '';
+                    }
+                    if (isValid) {
+                        if (modalFormBox) modalFormBox.style.display = 'none';
+                        if (modalSuccessBox) modalSuccessBox.style.display = 'block';
+                        enrollmentForm.reset();
+                        if (customCheckmark) customCheckmark.classList.remove('error-checkbox');
+                        if (phoneInput) phoneInput.style.borderColor = '';
+                        if (phoneInput) phoneInput.value = '+7';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
